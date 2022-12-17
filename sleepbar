@@ -7,6 +7,11 @@ fi
 
 sleeptime=$1
 
+if [[ ! "$sleeptime" =~ ^[0-9]+$ ]]; then
+    echo usage: sleepbar seconds
+    exit 1
+fi
+
 ECHO='echo -e'
 case `$ECHO` in
     -e)
